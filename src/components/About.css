@@ -5,6 +5,7 @@
   padding: 40px;
   gap: 20px;
   font-family: Arial, sans-serif;
+  margin-top: 40px;
 }
 
 .about-image {
@@ -69,6 +70,7 @@
   .about-content {
     flex: none;
     width: 100%;
+    margin-top: 30px;
   }
 
   .about-image img {
