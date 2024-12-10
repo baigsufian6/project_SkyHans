@@ -7,6 +7,11 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 60px;
   font-family: sans-serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  overflow: hidden;
 }
 
 .logo {
@@ -15,7 +20,7 @@
 }
 
 .logo-image {
-  height: 256px;
+  height: 156px;
   margin-right: 10px;
 }
 
@@ -24,6 +29,7 @@
   display: flex;
   margin: 0;
   padding: 0;
+  margin-right: 30px;
 }
 
 .nav-links li {
@@ -76,13 +82,22 @@
 @media screen and (max-width: 1080px) {
   .hamburger {
     display: block;
+    margin-right: 45px;
   }
 
   .nav-links {
     display: none;
   }
+
   .nav-links-mobile {
     z-index: 12;
+  }
+  .logo-image {
+    height: 180px;
+    margin-right: 10px;
+  }
+  .navbar {
+    margin-top: 1px;
   }
 }
 
@@ -92,6 +107,7 @@ a {
   font-family: sans-serif;
   color: black;
 }
+
 a:hover {
   color: #f48428;
 }
