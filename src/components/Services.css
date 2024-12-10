@@ -1,0 +1,164 @@
+.services-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.service-box {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.sub-header {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00aaff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.sub-header::before,
+.sub-header::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #00aaff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sub-header::before {
+  left: -50px;
+}
+
+.sub-header::after {
+  right: -50px;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 0;
+}
+
+.service-icon {
+  font-size: 3rem;
+  color: #00a7d1;
+  margin-bottom: 15px;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    .services-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .service-box {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Skills Section Styles */
+.skills-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.skills-box {
+  background-color: #e6f9ff; /* Light blue background for skills cards */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skills-icon {
+  font-size: 3rem;
+  color: #007bff; /* Blue color for icons */
+  margin-bottom: 15px;
+}
+
+.skills-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsive Design for Skills Section */
+@media screen and (max-width: 750px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+}
