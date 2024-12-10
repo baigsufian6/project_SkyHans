@@ -93,6 +93,9 @@
   .navbar {
     margin-top: 20px;
   }
+  .logo-image {
+    height: 180px;
+  }
 }
 
 a {
