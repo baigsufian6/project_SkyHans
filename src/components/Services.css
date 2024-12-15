@@ -1,3 +1,4 @@
+/* Services Section */
 .services-section {
   padding: 50px 20px;
   text-align: center;
@@ -25,6 +26,9 @@
   box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 170px;
+  position: relative;
+  opacity: 0; /* Hidden initially for animation */
 }
 
 .service-box:hover {
@@ -94,6 +98,70 @@
   color: #666;
 }
 
+/* Zigzag Animations */
+.service-box:nth-child(odd) {
+  animation: zigzagLeft 1s ease-out forwards;
+}
+
+.service-box:nth-child(even) {
+  animation: zigzagRight 1s ease-out forwards;
+}
+
+.service-box:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.service-box:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.service-box:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.service-box:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.service-box:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.service-box:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+.service-box:nth-child(7) {
+  animation-delay: 1.4s;
+}
+
+.service-box:nth-child(8) {
+  animation-delay: 1.6s;
+}
+
+/* Animation Keyframes */
+@keyframes zigzagLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes zigzagRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .services-container {
@@ -107,7 +175,7 @@
   }
 
   .service-box {
-    width: 80%;
+    width: 100%;
     margin-bottom: 20px;
   }
   .services-section {
@@ -129,12 +197,18 @@
 }
 
 .skills-box {
-  background-color: #e6f9ff; /* Light blue background for skills cards */
+  background-color: #e6f9ff;
   border-radius: 10px;
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+  height: 160px; /* Set a fixed height */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Ensure spacing between icon, title, and text */
+  align-items: center; /* Center-align the content */
+  overflow: hidden; /* Prevent text overflow */
 }
 
 .skills-box:hover {

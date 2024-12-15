@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Services from "./components/Services";
+import Expertise from "./components/Expertise";
 import "./App.css";
 
 // Scroll to Top Component
@@ -35,11 +36,13 @@ function App() {
               <Home />
               <About />
               <Services />
+              <Expertise />
             </>
           }
         />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/expertise" element={<Expertise />} />
       </Routes>
     </Router>
   );

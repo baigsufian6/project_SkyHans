@@ -1,0 +1,193 @@
+/* App.css */
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Smooth Background Gradient */
+.container {
+  text-align: center;
+  padding: 50px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+  margin-top: 15px;
+}
+
+/* Title Section */
+.title-section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.sub-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00aaff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.sub-title::before,
+.sub-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #00aaff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sub-title::before {
+  left: -50px;
+}
+
+.sub-title::after {
+  right: -50px;
+}
+
+.main-title {
+  font-size: 40px;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: slideInBottom 1s ease-in-out;
+}
+
+/* Services Section */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.15), transparent);
+  transform: rotate(45deg);
+  z-index: 0;
+  transition: all 0.5s ease;
+}
+
+.card:hover::before {
+  top: -80%;
+  left: -80%;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.25), transparent);
+}
+
+/* Fade Animation for CSSTransition */
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1000ms, transform 1000ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1000ms, transform 1000ms;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 480x) {
+  .container {
+    margin-top: 50px;
+  }
+}

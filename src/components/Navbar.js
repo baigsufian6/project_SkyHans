@@ -12,7 +12,11 @@ function Navbar() {
       <div className="logo">
         <img src={logo} alt="Logo" className="logo-image" />
       </div>
-      <div className="hamburger" onClick={() => setIsMobile(!isMobile)}>
+      <div
+        className="hamburger"
+        onClick={() => setIsMobile(!isMobile)}
+        aria-label="Toggle navigation menu"
+      >
         {isMobile ? <FaTimes /> : <FaBars />}
       </div>
       <ul
@@ -29,7 +33,7 @@ function Navbar() {
           <Link to="/services">SERVICES</Link>
         </li>
         <li>
-          <a href="#expertise">EXPERTISE</a>
+          <Link to="/expertise">EXPERTISE</Link>
         </li>
         <li>
           <a href="#product">PRODUCT</a>

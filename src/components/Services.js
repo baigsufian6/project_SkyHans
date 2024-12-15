@@ -61,7 +61,7 @@ const Services = () => {
   ];
 
   const skillfulServices = [
-    { icon: <FaPhp />, title: "Laravel Development" },
+    { icon: <FaPhp />, title: "PHP Development" },
     { icon: <FaWordpress />, title: "WordPress Development" },
     { icon: <FaSymfony />, title: "Symfony Web Development" },
     { icon: <FaJava />, title: "Java Development" },
@@ -79,17 +79,26 @@ const Services = () => {
           <div className="sub-header">WHAT WE DO</div>
           <h2 className="services-title">Our Major Domains</h2>
         </div>
-        <Slide triggerOnce direction="up">
-          <div className="services-container">
-            {services.map((service, index) => (
-              <div className="service-box" key={index}>
+        <div className="services-container">
+          {services.map((service, index) => (
+            <Slide
+              triggerOnce
+              direction={index % 2 === 0 ? "left" : "right"}
+              delay={index * 100}
+              key={index}
+            >
+              <div
+                className={`service-box ${
+                  index % 2 === 0 ? "zigzag-left" : "zigzag-right"
+                }`}
+              >
                 <div className="service-icon">{service.icon}</div>
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
               </div>
-            ))}
-          </div>
-        </Slide>
+            </Slide>
+          ))}
+        </div>
       </div>
 
       {/* Skillful Section */}
@@ -98,16 +107,16 @@ const Services = () => {
           <div className="sub-header">WHAT WE DO</div>
           <h2 className="services-title">We're Skillful at</h2>
         </div>
-        <Slide triggerOnce direction="up">
-          <div className="skills-container">
-            {skillfulServices.map((service, index) => (
-              <div className="skills-box" key={index}>
+        <div className="skills-container">
+          {skillfulServices.map((service, index) => (
+            <Slide triggerOnce direction="up" delay={index * 150} key={index}>
+              <div className="skills-box">
                 <div className="skills-icon">{service.icon}</div>
                 <h3 className="skills-title">{service.title}</h3>
               </div>
-            ))}
-          </div>
-        </Slide>
+            </Slide>
+          ))}
+        </div>
       </div>
     </div>
   );

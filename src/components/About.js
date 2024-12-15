@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./About.css";
 import webDevelopmentImg from "./images/web_development.jpeg";
 
 const About = () => {
+  const [imageVisible, setImageVisible] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setImageVisible(true);
+    }, 500); // Delay to sync animations
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <div className="about-container">
       <div className="about-image">
-        <img src={webDevelopmentImg} alt="Web Development" />
+        <img
+          src={webDevelopmentImg}
+          alt="Web Development"
+          className={imageVisible ? "visible" : ""}
+        />
       </div>
       <div className="about-content">
         <h3>ABOUT US</h3>
@@ -15,20 +28,11 @@ const About = () => {
           SkyHans is one of the emerging and leading Software Companies in
           Bangalore, India. Our strength lies in our creative ideas and
           implementing them into real-time products that fulfill business needs.
-          Our offerings span across Software Products, Web Design & Graphics
-          Design, Web Applications, Web Portals, ECommerce, Desktop
-          Applications, and Industrial Training (JAVA/J2EE, STRUTS, SPRING,
-          HIBERNET, .Net, C#, VB.Net, WPF, PHP, ORACLE, SQL Server, My SQL,
-          AJAX, HTML, CSS, XML, JAVA SCRIPT).
         </p>
         <p>
-          We are providing services and end-to-end solutions across the product
-          lifecycle. We have a pool of talented web designers and software
-          developers to build online solutions that reduce costs and create new
-          sources of revenue for clients. They come to us for web
-          applications/software that help them retain customers. They come to us
-          for tools that can help them sell more. In an industry that is mainly
-          online, our only component is customer satisfaction.
+          We provide services and end-to-end solutions across the product
+          lifecycle. Our talented web designers and software developers build
+          solutions that reduce costs and create new revenue opportunities.
         </p>
       </div>
     </div>

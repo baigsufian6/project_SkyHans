@@ -4,8 +4,9 @@
   justify-content: space-between;
   padding: 40px;
   gap: 20px;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-top: 40px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .about-image {
@@ -13,6 +14,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .about-image img {
@@ -20,21 +23,32 @@
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  transition: transform 1s ease, opacity 1s ease;
+  opacity: 0;
+}
+
+.about-image img.visible {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .about-content {
   flex: 1;
   padding: 0 20px;
+  position: relative;
 }
 
 .about-content h3 {
-  color: #00a7d1;
+  color: #0078d4;
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
   text-transform: uppercase;
   position: relative;
+  letter-spacing: 1px;
+  animation: slideInTop 1s ease-in-out;
 }
 
 .about-content h3::after {
@@ -42,15 +56,17 @@
   display: block;
   width: 50px;
   height: 2px;
-  background: #00a7d1;
+  background: #0078d4;
   margin-top: 5px;
 }
 
 .about-content h1 {
-  font-size: 32px;
+  font-size: 36px;
   color: #333;
   font-weight: bold;
   margin-bottom: 20px;
+  line-height: 1.2;
+  animation: slideInLeft 1.2s ease-in-out;
 }
 
 .about-content p {
@@ -58,6 +74,49 @@
   color: #555;
   line-height: 1.8;
   margin-bottom: 15px;
+  animation: fadeInText 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 768px) {
