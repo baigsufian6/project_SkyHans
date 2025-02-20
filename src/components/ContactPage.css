@@ -127,7 +127,7 @@ body {
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
+  width: 96%;
   padding: 12px;
   font-size: 1rem;
   border: 2px solid #eee;
@@ -189,22 +189,49 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .contact-page {
+    padding: 60px 16px;
+  }
+
   .contact-header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
-  
-  .contact-wrapper {
-    flex-direction: column;
-    padding: 0;
+
+  .contact-header p {
+    font-size: 1rem;
+    padding: 0 16px;
   }
-  
-  .form-row {
-    flex-direction: column;
-    gap: 0;
-  }
-  
+
   .contact-info,
   .contact-form {
     padding: 30px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 24px;
+  }
+
+  .info-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .info-item i {
+    font-size: 1.1rem;
   }
 }

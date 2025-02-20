@@ -1,40 +1,101 @@
-import React, { useEffect, useState } from "react";
-import "./About.css";
-import webDevelopmentImg from "./images/web_development.jpeg";
+import React, { useEffect } from 'react';
+import './About.css';
+import { FaCode, FaLaptop, FaGraduationCap, FaShoppingCart, FaVrCardboard, FaFlask } from 'react-icons/fa';
+import Expertise from './Expertise';
+import Services from './Services';
 
 const About = () => {
-  const [imageVisible, setImageVisible] = useState(false);
-
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setImageVisible(true);
-    }, 500); // Delay to sync animations
-    return () => clearTimeout(timeout);
+    const observerOptions = {
+      threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(el => observer.observe(el));
+
+    return () => {
+      animatedElements.forEach(el => observer.unobserve(el));
+    };
   }, []);
+
+  const services = [
+    {
+      icon: <FaFlask />,
+      title: "Animal Laboratory Management",
+      description: "Comprehensive solutions for managing animal laboratory operations and data."
+    },
+    {
+      icon: <FaVrCardboard />,
+      title: "Web & Graphic Design",
+      description: "Cutting-edge 2D, 3D, AR, and VR design solutions for modern businesses."
+    },
+    {
+      icon: <FaCode />,
+      title: "Web Applications",
+      description: "Custom websites, portals, and software solutions tailored to your needs."
+    },
+    {
+      icon: <FaShoppingCart />,
+      title: "E-Commerce Solutions",
+      description: "Robust online shopping platforms and digital marketplace solutions."
+    },
+    {
+      icon: <FaLaptop />,
+      title: "Educational Software",
+      description: "Interactive learning platforms and educational technology solutions."
+    },
+    {
+      icon: <FaGraduationCap />,
+      title: "Industrial Training",
+      description: "Comprehensive internship programs and professional development courses."
+    }
+  ];
 
   return (
     <div className="about-container">
-      <div className="about-image">
-        <img
-          src={webDevelopmentImg}
-          alt="Web Development"
-          className={imageVisible ? "visible" : ""}
-        />
-      </div>
-      <div className="about-content">
-        <h3>ABOUT US</h3>
-        <h1>Welcome to Skyhans</h1>
-        <p>
-          SkyHans is one of the emerging and leading Software Companies in
-          Bangalore, India. Our strength lies in our creative ideas and
-          implementing them into real-time products that fulfill business needs.
-        </p>
-        <p>
-          We provide services and end-to-end solutions across the product
-          lifecycle. Our talented web designers and software developers build
-          solutions that reduce costs and create new revenue opportunities.
-        </p>
-      </div>
+      <section className="company-intro animate-on-scroll">
+        <h2>Who We Are</h2>
+        <p>SkyHans is a dynamic and innovative software company based in Bangalore, India. We specialize in turning creative ideas into real-world solutions that meet diverse business needs.</p>
+      </section>
+
+      <section className="services-grid">
+        {services.map((service, index) => (
+          <div key={index} className="service-card animate-on-scroll">
+            <div className="service-icon">{service.icon}</div>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="commitment-section animate-on-scroll">
+        <h2>Our Commitment</h2>
+        <p>At SkyHans, we are committed to delivering excellence through our cutting-edge solutions, helping businesses thrive in an ever-evolving digital landscape.</p>
+        <div className="stats-container">
+          <div className="stat-item">
+            <h3>100+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div className="stat-item">
+            <h3>50+</h3>
+            <p>Happy Clients</p>
+          </div>
+          <div className="stat-item">
+            <h3>5+</h3>
+            <p>Years Experience</p>
+          </div>
+        </div>
+      </section>
+
+      <Expertise />
     </div>
   );
 };
