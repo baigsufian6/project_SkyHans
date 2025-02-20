@@ -13,6 +13,7 @@ import Expertise from "./components/Expertise";
 import ProductPage from "./components/ProductPage";
 import Contact from './components/ContactPage'
 import Team from './components/TeamMembersPage'
+import Footer from './components/Footer'
 import "./App.css";
 
 
@@ -40,6 +41,7 @@ function App() {
               <Home />
               <Services />
               <Expertise />
+              <Footer />
             </>
           }
         />
