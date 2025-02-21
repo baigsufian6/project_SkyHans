@@ -152,7 +152,7 @@ const Services = () => {
         </div>
       </div>
 
-      {/* Skillful Section */}
+      {/* Skillful Section
       <div className="skills-section">
         <div className="section-header">
           <div className="sub-header">WHAT WE DO</div>
@@ -172,7 +172,7 @@ const Services = () => {
             </Slide>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

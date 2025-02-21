@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import duplicate from './images/skyduplicate.png'
+import duplicate from './images/sky.png'
 import { 
   FaMapMarkerAlt, FaEnvelope, FaPhone, FaFacebookF, 
   FaTwitter, FaInstagram, FaLinkedinIn, FaDribbble,
@@ -12,21 +12,6 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__gradient-overlay"></div>
       
-      {/* Newsletter Section */}
-      <div className="footer__newsletter">
-        <div className="footer__newsletter-content">
-          <h2>Stay Updated with Our Newsletter</h2>
-          <p>Get the latest updates, news and special offers delivered directly to your inbox.</p>
-          <form className="footer__subscribe">
-            <div className="footer__input-group">
-              <input type="email" placeholder="Enter your email" />
-              <button type="submit">
-                Subscribe <FaArrowRight />
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
 
       <div className="footer__main">
         <div className="footer__grid">

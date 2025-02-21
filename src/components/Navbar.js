@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from './images/hanslogo-removebg-preview-update.png'
+import logo from './images/skyhans logo-01.svg';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -18,7 +18,6 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    // Close services menu when route changes
     setServicesOpen(false);
   }, [location]);
 
@@ -47,36 +46,34 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-content">
-          {/* Logo */}
-          <div className="navbar-logo">
-            <img 
-              src={logo}
-              alt="Logo" 
-              className="logo-image"
-            />
-          </div>
+          <Link to="/" className="navbar-logo">
+            <img src={logo} alt="Logo" className="logo-image" />
+          </Link>
 
-          {/* Desktop Navigation */}
           <div className="nav-links-desktop">
             {navLinks.map((link) => (
               <div key={link.path} className="nav-item">
                 {link.subMenu ? (
-                  <div className="services-menu">
+                  <div 
+                    className="services-menu"
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
+                  >
                     <Link
                       to={link.path}
                       className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
-                      onClick={() => setServicesOpen(!servicesOpen)}
                     >
                       {link.label}
                       <svg 
                         className={`dropdown-arrow ${servicesOpen ? 'rotated' : ''}`} 
-                        fill="none" 
+                        width="24" 
+                        height="24" 
                         viewBox="0 0 24 24" 
+                        fill="none" 
                         stroke="currentColor"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
-                      <span className="nav-link-underline" />
                     </Link>
                     <div className={`submenu ${servicesOpen ? 'active' : ''}`}>
                       {link.subMenu.map((subLink) => (
@@ -96,32 +93,25 @@ const Navbar = () => {
                     className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
                   >
                     {link.label}
-                    <span className="nav-link-underline" />
                   </Link>
                 )}
               </div>
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="mobile-menu-button"
             onClick={() => setIsMobile(!isMobile)}
             aria-label="Toggle navigation menu"
           >
-            {isMobile ? (
-              <svg className="menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            <span className={`hamburger ${isMobile ? 'active' : ''}`}>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+            </span>
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         <div className={`nav-links-mobile ${isMobile ? 'active' : ''}`}>
           {navLinks.map((link) => (
             <div key={link.path} className="mobile-nav-item">
@@ -140,8 +130,10 @@ const Navbar = () => {
                 {link.subMenu && (
                   <svg 
                     className={`dropdown-arrow ${servicesOpen ? 'rotated' : ''}`} 
-                    fill="none" 
+                    width="24" 
+                    height="24" 
                     viewBox="0 0 24 24" 
+                    fill="none" 
                     stroke="currentColor"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

@@ -40,7 +40,6 @@ function App() {
             <>
               <Home />
               <Services />
-              <Expertise />
               <Footer />
             </>
           }
