@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import './ContactPage.css';
-import Footer from './Footer'
+import Footer from './Footer';
 
 const ContactPage = () => {
   const [formStatus, setFormStatus] = useState("");
@@ -24,7 +24,7 @@ const ContactPage = () => {
 
   return (
     <motion.div 
-      className="contact-page"
+      className="contact-page-container" // Add a container for flex layout
       variants={pageVariants}
       initial="initial"
       animate="animate"
@@ -128,9 +128,9 @@ const ContactPage = () => {
             </form>
           </motion.div>
         </div>
-       
       </div>
-      <Footer />
+
+      <Footer /> {/* Footer is now at the bottom */}
     </motion.div>
   );
 };

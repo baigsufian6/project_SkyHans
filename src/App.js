@@ -15,6 +15,7 @@ import Contact from './components/ContactPage'
 import Team from './components/TeamMembersPage'
 import Footer from './components/Footer'
 import Testamonial from './components/Testamonial'
+import Logoslide from './components/LogoSlider'
 import "./App.css";
 
 
@@ -41,6 +42,7 @@ function App() {
             <>
               <Home />
               <Services />
+              <Logoslide />
               <Testamonial />
               <Footer />
             </>
