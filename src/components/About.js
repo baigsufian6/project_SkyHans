@@ -3,6 +3,7 @@ import './About.css';
 import { FaCode, FaLaptop, FaGraduationCap, FaShoppingCart, FaVrCardboard, FaFlask } from 'react-icons/fa';
 import Expertise from './Expertise';
 import Services from './Services';
+import Footer from './Footer'
 
 const About = () => {
   useEffect(() => {
@@ -96,6 +97,7 @@ const About = () => {
       </section>
 
       <Expertise />
+      <Footer />
     </div>
   );
 };

@@ -309,3 +309,226 @@
     padding: 4rem 1rem;
   }
 }
+
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(40, 37, 96, 0.8); /* Darker overlay for better contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+  padding: 1rem;
+  backdrop-filter: blur(10px); /* Increased blur for a more modern look */
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.popup-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px; /* Slightly larger border radius */
+  box-shadow: 0 20px 40px rgba(40, 37, 96, 0.2); /* Deeper shadow for more depth */
+  width: 100%;
+  max-width: 440px; /* Slightly wider for better content spacing */
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 9999;
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Slightly larger initial offset */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+.popup-container::-webkit-scrollbar {
+  width: 6px; /* Slightly wider scrollbar */
+}
+
+.popup-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+.popup-container::-webkit-scrollbar-thumb {
+  background: #ff6004;
+  border-radius: 6px;
+}
+
+.close-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  width: 28px; /* Slightly larger close button */
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #282560;
+}
+
+.close-button:hover {
+  transform: rotate(90deg);
+  color: #ff6004;
+}
+
+.popup-title {
+  font-size: 1.75rem; /* Larger title */
+  font-weight: 700; /* Bolder font weight */
+  color: #282560;
+  margin-bottom: 0.5rem;
+}
+
+.popup-subtitle {
+  color: #666;
+  margin-bottom: 1.75rem; /* Slightly more spacing */
+  font-size: 0.9375rem; /* Slightly larger subtitle */
+  line-height: 1.5; /* Better readability */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Increased gap for better spacing */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Slightly larger gap */
+}
+
+.form-group label {
+  font-weight: 600; /* Bolder labels */
+  color: #282560;
+  font-size: 0.9375rem; /* Slightly larger labels */
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem; /* Slightly larger padding */
+  border: 1px solid #e1e1e1;
+  border-radius: 8px; /* Slightly larger border radius */
+  font-size: 0.9375rem; /* Slightly larger font size */
+  transition: all 0.2s ease;
+  background-color: #fff;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: #282560;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff6004;
+  box-shadow: 0 0 0 3px rgba(255, 96, 4, 0.2); /* Slightly larger focus shadow */
+}
+
+.submit-button {
+  background: #ff6004;
+  color: white;
+  padding: 0.85rem; /* Slightly larger padding */
+  border: none;
+  border-radius: 8px; /* Slightly larger border radius */
+  font-size: 0.9375rem; /* Slightly larger font size */
+  font-weight: 600; /* Bolder font weight */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.75rem; /* Slightly more spacing */
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button:hover {
+  background: #282560;
+  transform: translateY(-2px); /* Slightly larger hover effect */
+  box-shadow: 0 6px 16px rgba(40, 37, 96, 0.3); /* Deeper shadow on hover */
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .popup-container {
+    max-width: 90%; /* More responsive width */
+    padding: 1.75rem; /* Slightly larger padding */
+  }
+
+  .popup-title {
+    font-size: 1.5rem; /* Adjusted font size */
+  }
+
+  .popup-subtitle {
+    font-size: 0.875rem; /* Adjusted font size */
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .submit-button {
+    font-size: 0.875rem; /* Adjusted font size */
+  }
+
+  .close-button {
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 24px; /* Adjusted size */
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-overlay {
+    padding: 0.5rem; /* Adjusted padding */
+  }
+
+  .popup-container {
+    padding: 1.5rem; /* Adjusted padding */
+    max-height: 95vh; /* Adjusted max height */
+  }
+
+  .popup-title {
+    font-size: 1.375rem; /* Adjusted font size */
+  }
+
+  .popup-subtitle {
+    font-size: 0.8125rem; /* Adjusted font size */
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .submit-button {
+    font-size: 0.8125rem; /* Adjusted font size */
+  }
+
+  .close-button {
+    top: 1rem;
+    right: 1rem;
+    width: 22px; /* Adjusted size */
+    height: 22px;
+  }
+}

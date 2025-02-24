@@ -10,6 +10,7 @@ import gow from './images/AparnaGowswami-HRhead.jpg';
 import bl from './images/BLPraveen-techlead&manager.jpg';
 import shams from './images/shamsher-ArVRhead.jpg';
 import suresh from './images/sureshMishra-lgalAdvisor.jpg';
+import Footer from './Footer'
 
 const TeamMembersPage = () => {
   const [hoveredMember, setHoveredMember] = useState(null);
@@ -134,6 +135,7 @@ const TeamMembersPage = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

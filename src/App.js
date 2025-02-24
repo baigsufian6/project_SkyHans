@@ -14,6 +14,7 @@ import ProductPage from "./components/ProductPage";
 import Contact from './components/ContactPage'
 import Team from './components/TeamMembersPage'
 import Footer from './components/Footer'
+import Testamonial from './components/Testamonial'
 import "./App.css";
 
 
@@ -40,6 +41,7 @@ function App() {
             <>
               <Home />
               <Services />
+              <Testamonial />
               <Footer />
             </>
           }

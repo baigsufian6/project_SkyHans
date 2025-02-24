@@ -3,6 +3,7 @@ import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { ArrowRight, CheckCircle, Shield, FileText, Users, 
          Database, Settings, ChartBar, Lock } from 'lucide-react';
 import './ProductPage.css';
+import Footer from './Footer'
 import p1 from './images/p1.webp'
 import p2 from './images/p2.webp'
 import p3 from './images/p3.webp'
@@ -242,6 +243,7 @@ const ProductPage = () => {
           </motion.button>
         </motion.div>
       </section>
+      <Footer />
     </div>
   );
 };

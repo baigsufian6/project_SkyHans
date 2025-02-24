@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import './ContactPage.css';
+import Footer from './Footer'
 
 const ContactPage = () => {
   const [formStatus, setFormStatus] = useState("");
@@ -127,7 +128,9 @@ const ContactPage = () => {
             </form>
           </motion.div>
         </div>
+       
       </div>
+      <Footer />
     </motion.div>
   );
 };
